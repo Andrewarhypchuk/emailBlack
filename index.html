@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-black: #121212;
+        --light-green: #ecf8e2;
+        --gray: #323232;
+        --gray2: #f2f2f6;
+        --green: #1d7b1e;
+        --green3: #33cd32;
+        --green-light: #33cd321a;
+        --text-color: #ffffff;
+        --container-bg-color: #ffffff;
+        --container-text-color: #000000;
+      }
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--primary-black);
+      }
+      .email-container {
+        width: 656px;
+        height: 1066px;
+        padding: 32px;
+        background-color: var(--primary-black);
+        color: var(
+          --text-color
+        ); /* Додамо білий колір тексту, щоб він був видимий на темному фоні */
+        box-sizing: border-box;
+        margin: 0 auto; /* Центруємо контейнер */
+      }
+      .img {
+        width: 46px;
+        height: 46px;
+        margin-top: 10px;
+      }
+      .custom-container {
+        width: 592px;
+        height: 706px;
+        padding: 32px 40px;
+        margin: 16px 0;
+        margin-top: 5px;
+        border-radius: 20px;
+        background-color: var(--container-bg-color); /* Фон контейнера */
+        color: var(--container-text-color); /* Колір тексту контейнера */
+        box-sizing: border-box;
+      }
+      .custom-container-header {
+        font-family: "Poppins";
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+        text-align: center;
+        color: var(--gray);
+        margin-bottom: 12px;
+      }
+      .custom-container-title {
+        font-family: "Poppins";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: center;
+        margin-bottom: 16px;
+        color: var(--gray);
+      }
+      .custom-container-title span {
+        font-weight: 600;
+        color: var(--green);
+      }
+      .custom-container-informationInput {
+        width: 100%;
+        height: 42px;
+        max-height: 42px;
+        border-radius: 8px;
+        background-color: var(--gray2);
+        margin-bottom: 8px;
+        display: table;
+      }
+      .custom-container-informationInput-name {
+        width: 50%;
+        height: 100%;
+        padding-left: 20px;
+        text-align: left;
+        display: table-cell;
+        line-height: 100%;
+        position: relative;
+        padding: 13px 0px 0px 34px;
+        font-family: Poppins;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 14px;
+        color: var(--gray);
+      }
+      .custom-container-informationInput-name-icon {
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        top: 11px;
+        left: 10px;
+      }
+      .custom-container-informationInput-value {
+        width: 50%;
+        height: 100%;
+        padding-right: 20px;
+        text-align: right;
+        display: table-cell;
+        position: relative;
+        font-family: "Inter", sans-serif;
+        font-family: Inter;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        color: var(--primary-black);
+      }
+      .custom-container-informationInput-button {
+        width: 96px;
+        height: 26px;
+        background: var(--green3);
+        border-radius: 26px;
+        font-size: 12px;
+        font-family: Poppins;
+        font-weight: 600;
+        line-height: 14px;
+        text-align: center;
+        color: var(--light-green);
+        line-height: 26px;
+        float: right;
+        position: absolute;
+        top: 8px;
+        right: 8px;
+      }
+      .custom-container-informationInput-large {
+        width: 100%;
+        height: 110px;
+        max-height: 110px;
+        border-radius: 8px;
+        background-color: var(--gray2);
+        color: var(--gray);
+        margin-bottom: 8px;
+        display: table;
+        padding: 6px 8px;
+        margin-bottom: 15px;
+      }
+      .custom-container-informationInput-large-header {
+        width: 100%;
+        height: 18px;
+        padding-left: 26px;
+        text-align: left;
+        position: relative;
+        margin-bottom: 12px;
+        font-family: Poppins;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 14px;
+        padding-top: 2px;
+      }
+      .custom-container-informationInput-large-header-img {
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        top: 0px;
+        left: 2px;
+      }
+      .custom-container-informationInput-body {
+        width: 100%;
+        font-family: Inter;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+        color: var(--primary-black);
+      }
+      .custom-container-text {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 14px;
+        text-align: left;
+        margin-bottom: 12px;
+        font-family: Poppins;
+        padding-left: 2px;
+        color: var(--gray);
+      }
+      .custom-container-text2 {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+        margin-bottom: 16px;
+        font-family: Inter;
+        color: var(--gray);
+      }
+      .custom-container-click-text {
+        width: 100%;
+        height: 53px;
+        padding: 10px 0px 0px 11px;
+        border-radius: 8px;
+        background-color: var(--green-light);
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 17px;
+        text-align: left;
+        color: var(--green);
+        margin-bottom: 16px;
+        font-family: Poppins;
+      }
+      .custom-container-click-text span {
+        color: var(--green);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 14px;
+        text-align: left;
+      }
+      .footer-logo {
+        width: 187px;
+        height: 48px;
+        margin-left: 202px;
+        margin-top: 16px;
+        margin-bottom: 18px;
+      }
+      .footer-text {
+        font-family: Inter;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: center;
+      }
+      .footer-text span {
+        color: #33cd32;
+      }
+      .footer-socailMedia {
+        margin-bottom: 6px;
+      }
+      .footer-socailMedia-img1 {
+        margin-left: 188px;
+        margin-right: 19px;
+      }
+      .footer-socailMedia-img2 {
+        margin-right: 19px;
+      }
+      .footer-socailMedia-img3 {
+        margin-right: 19px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <img class="img" src="./Images/Logo.svg" alt="Опис зображення" />
+      <div class="custom-container">
+        <div class="custom-container-header">Hi Clay,</div>
+        <div class="custom-container-title">
+          Great news! Your <span>LimeLite</span> Video is ready for review. See
+          details below:
+        </div>
+        <div class="custom-container-informationInput">
+          <div class="custom-container-informationInput-name">
+            <img
+              class="custom-container-informationInput-name-icon"
+              src="./Images/JobNumberIcon.svg"
+              alt=""
+            />
+            Job Number
+          </div>
+          <div class="custom-container-informationInput-value">LLV_26_06</div>
+        </div>
+        <div class="custom-container-informationInput">
+          <div class="custom-container-informationInput-name">
+            <img
+              class="custom-container-informationInput-name-icon"
+              src="./Images/JobNameIcon.svg"
+              alt=""
+            />
+            Job Name
+          </div>
+          <div class="custom-container-informationInput-value">
+            Project Name
+          </div>
+        </div>
+        <div class="custom-container-informationInput">
+          <div class="custom-container-informationInput-name">
+            <img
+              class="custom-container-informationInput-name-icon"
+              src="./Images/ReviewLinkIcon.svg"
+              alt=""
+            />
+            Review Link
+          </div>
+          <div class="custom-container-informationInput-value">
+            <div class="custom-container-informationInput-button">
+              Open Link
+            </div>
+          </div>
+        </div>
+        <div class="custom-container-informationInput-large">
+          <div class="custom-container-informationInput-large-header">
+            Editor Notes
+            <img
+              class="custom-container-informationInput-name-icon"
+              src="./Images/EditNotesIcon.svg"
+              style="top: 0; left: 0"
+            />
+          </div>
+          <div class="custom-container-informationInput-body">
+            Consider enhancing transitions for smoother flow between scenes.
+            Audio levels are consistent but could benefit from slight
+            adjustments to highlight key moments. Overall pacing is good; minor
+            trimming at the beginning could improve engagement.
+          </div>
+        </div>
+        <div class="custom-container-text">
+          Everything You Need to Review Your LimeLite Video
+        </div>
+        <div class="custom-container-text2">
+          We love providing lightning fast turnarounds, and the best way for us
+          to do that is to have clear, concise feedback all in one place. With
+          our online screening room, the review process is easier than ever!
+        </div>
+        <div class="custom-container-click-text">
+          👉 <span>CLICK HERE</span> for tips on using our screening room to
+          leave effective, time-coded feedback on your video.
+        </div>
+        <div class="custom-container-text2" style="margin-bottom: 12px">
+          For project with tight deadlines, be sure to budget time for a
+          thorough review process; otherwise, rush editing fees could apply.
+        </div>
+        <div class="custom-container-text2" style="margin-bottom: 12px">
+          We 💚 creating videos for you!
+        </div>
+        <div class="custom-container-text2" style="margin-bottom: 0px">
+          Thank you
+        </div>
+        <div class="custom-container-text2">
+          The
+          <span style="color: #1d7b1e; font-weight: 600"> LimeLite </span> Crew
+        </div>
+      </div>
+      <img
+        class="footer-logo"
+        src="./Images/FooterLogo.svg"
+        alt="Опис зображення"
+      />
+      <div class="footer-text">
+        Questions or concerns? Get in touch with us at
+        <span>www.limelitevideos.com</span>
+      </div>
+      <div class="footer-text" style="margin-bottom: 24px">
+        Never miss a beat! Follow us on <span>Facebook</span> and
+        <span>Instagram.</span>
+      </div>
+      <div class="footer-socailMedia">
+        <img
+          class="footer-socailMedia-img1"
+          src="./Images/LinkIcon.svg"
+          alt="Опис зображення"
+        />
+        <img
+          class="footer-socailMedia-img2"
+          src="./Images/YoutubeIcon.svg"
+          alt="Опис зображення"
+        />
+        <img
+          class="footer-socailMedia-img3"
+          src="./Images/InstagramIcon.svg"
+          alt="Опис зображення"
+        />
+        <img
+          class="footer-socailMedia-img4"
+          src="./Images/FacebookIcon.svg"
+          alt="Опис зображення"
+        />
+      </div>
+      <div class="footer-text" style="margin-bottom: 0px">
+        All rights reserved.
+      </div>
+    </div>
+  </body>
+</html>
